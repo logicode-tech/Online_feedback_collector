@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h2>Submit Your Feedback</h2>
+  <form action="/submit" method="POST">
+    <label for="name">Name (optional):</label>
+    <input type="text" id="name" name="name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="rating">Rating:</label>
+    <select id="rating" name="rating" required>
+      <option value="5">🌟 Excellent</option>
+      <option value="4">👍 Good</option>
+      <option value="3">👌 Average</option>
+      <option value="2">😕 Poor</option>
+      <option value="1">👎 Very Poor</option>
+    </select>
+
+    <label for="message">Feedback:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}
